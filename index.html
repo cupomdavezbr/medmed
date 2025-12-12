@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Atendimento | Portal do Beneficiário</title>
+    <meta name="description" content="Portal do Beneficiário - 2ª via de fatura, reembolsos e suporte.">
+    <meta name="theme-color" content="#059669"> 
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brandBlue: { // Usando tons de VERDE EMERALD para estrutura
+                            50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 
+                            600: '#059669', 800: '#065f46', 900: '#064e3b',
+                        },
+                        brandOrange: { // Usando tons de VERDE GREEN para destaques
+                            50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 
+                            600: '#16a34a', 700: '#15803d',
+                        },
+                    },
+                    boxShadow: { soft: '0 16px 32px -12px rgba(0,0,0,0.1)' },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<header class="fixed w-full top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm transition-all">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-brandBlue-600 rounded-lg flex items-center justify-center text-white shadow-lg">H</div>
+            <span class="text-2xl font-extrabold text-brandBlue-900">
+                Portal<span class="text-brandOrange-600">Beneficiário</span>
+            </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+            <a href="#servicos" class="hover:text-brandBlue-600 transition">Meus Serviços</a>
+            <a href="https://api.whatsapp.com/send?phone=551231971454" target="_blank" class="hover:text-brandOrange-600 transition">Financeiro</a>
+            <a href="#suporte" class="hover:text-brandBlue-600 transition">Suporte</a>
+        </nav>
+        
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-slate-100">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 bg-white border-t border-gray-200 shadow-md">
+        <a href="#servicos" class="block py-3 text-slate-700">Meus Serviços</a>
+        <a href="#suporte" class="block py-3 text-slate-700">Suporte</a>
+    </div>
+</header>
+<script>document.getElementById("menuBtn").onclick = () => document.getElementById("mobileMenu").classList.toggle("hidden");</script>
+
+<section class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-white via-brandBlue-50 to-white overflow-hidden">
+    <div class="container mx-auto px-4">
+        
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
+            <div class="w-full lg:w-1/2 text-center lg:text-left space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brandBlue-100 shadow">
+                    <span class="w-2 h-2 bg-brandOrange-500 rounded-full"></span>
+                    <span class="text-xs font-semibold text-brandBlue-900 uppercase">Área Exclusiva</span>
+                </div>
+
+                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight text-brandBlue-900">
+                    Sua saúde em <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue-600 to-brandBlue-800">Boas Mãos</span>
+                </h1>
+
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Acesse boletos, carteirinha e reembolsos de forma simples. 
+                    Tudo o que você precisa num só lugar.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <a href="https://api.whatsapp.com/send?phone=551231971454" target="_blank"
+                       class="bg-brandOrange-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-brandOrange-700 transition hover:-translate-y-1">
+                        Acessar Serviços
+                    </a>
+                    <a href="#suporte" class="bg-white border-2 border-brandBlue-100 text-brandBlue-900 px-8 py-4 rounded-full font-bold hover:border-brandOrange-500 hover:text-brandOrange-600 transition">
+                        Ajuda
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 relative">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-brandOrange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-brandBlue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500">
+                    <img 
+                        src="medsenior.png" 
+                        alt="Família feliz ou Médico" 
+                        class="w-full h-auto object-cover"
+                    >
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="servicos" class="relative z-20 mb-24">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandOrange-500 hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-16 h-16 shrink-0 rounded-lg border border-brandOrange-100 bg-brandOrange-50 flex items-center justify-center overflow-hidden">
+                    <span class="text-3xl">📄</span> 
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">2ª Via de Fatura</h3>
+                    <p class="text-sm text-slate-500 mt-1">Acesse seus boletos.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandBlue-900 hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-16 h-16 shrink-0 rounded-lg border border-brandBlue-100 bg-brandBlue-50 flex items-center justify-center overflow-hidden">
+                    <span class="text-3xl">🪪</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Carteirinha Virtual</h3>
+                    <p class="text-sm text-slate-500 mt-1">Identificação digital.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandOrange-500 hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-16 h-16 shrink-0 rounded-lg border border-brandOrange-100 bg-brandOrange-50 flex items-center justify-center overflow-hidden">
+                    <span class="text-3xl">💰</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Reembolso</h3>
+                    <p class="text-sm text-slate-500 mt-1">Envie suas solicitações.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="suporte" class="py-24 bg-brandBlue-900 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+        <div class="absolute top-10 right-10 w-96 h-96 bg-brandOrange-500 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+
+            <div class="w-full lg:w-1/2 text-white space-y-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                    Precisa de ajuda? <br>
+                    <span class="text-brandOrange-500">Estamos aqui.</span>
+                </h2>
+                <p class="text-brandBlue-100 text-lg leading-relaxed">
+                    Nossa equipa de especialistas está pronta para resolver o seu problema rapidamente via WhatsApp.
+                </p>
+
+                <div class="flex items-center gap-6 mt-8">
+                    <div class="w-16 h-16 rounded-full border-2 border-brandOrange-500 overflow-hidden shadow-lg">
+                         <img src="consultor1.jpg" alt="Atendente" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <p class="text-white font-bold">Atendimento Humanizado</p>
+                        <p class="text-brandBlue-200 text-sm">Disponível agora</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 max-w-md bg-white p-8 rounded-2xl shadow-2xl text-center space-y-6 transform lg:translate-x-10">
+                <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-2xl animate-pulse">
+                    💬
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Iniciar Conversa</h3>
+                <p class="text-slate-500 text-sm">Clique abaixo para falar no WhatsApp.</p>
+
+                <a href="https://api.whatsapp.com/send?phone=551231971454" target="_blank"
+                   class="block w-full bg-[#25D366] text-white px-6 py-4 rounded-lg font-bold shadow-md hover:bg-[#1ebe5f] hover:shadow-lg transition">
+                    Abrir WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="container mx-auto px-4 text-center">
+        
+        <span class="text-xl font-extrabold text-white block mb-6">
+            Portal<span class="text-brandOrange-600">Beneficiário</span>
+        </span>
+
+        <nav class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-400">
+            <a href="politica.html" class="hover:text-brandOrange-500 transition-colors">Política de Privacidade</a>
+            <span class="hidden sm:inline text-slate-700">|</span>
+            <a href="termos.html" class="hover:text-brandOrange-500 transition-colors">Termos de Uso</a>
+        </nav>
+
+        <p class="text-xs text-slate-600">&copy; 2025 — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>
